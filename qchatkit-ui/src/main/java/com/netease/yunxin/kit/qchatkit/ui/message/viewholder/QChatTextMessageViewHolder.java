@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import androidx.annotation.NonNull;
 import com.netease.nimlib.sdk.msg.constant.MsgTypeEnum;
+import com.netease.yunxin.kit.alog.ALog;
 import com.netease.yunxin.kit.qchatkit.repo.model.QChatMessageInfo;
 import com.netease.yunxin.kit.qchatkit.ui.R;
 import com.netease.yunxin.kit.qchatkit.ui.databinding.QChatBaseMessageViewHolderBinding;
@@ -43,15 +44,7 @@ public class QChatTextMessageViewHolder extends QChatBaseMessageViewHolder {
     super.bindData(data, position, lastMessage);
     if (data.getMessage().getMsgType() == MsgTypeEnum.text) {
       String content = data.getMessage().getContent();
-      List<String> mentionedAccidList = data.getMessage().getMentionedAccidList();
       Map<String, Object> remoteExtension = data.getMessage().getRemoteExtension();
-
-      // 打印日志
-      Log.d(TAG, "=== 文本消息内容 ===");
-      Log.d(TAG, "content: " + content);
-      Log.d(TAG, "mentionedAccidList: " + (mentionedAccidList == null ? "null" : mentionedAccidList.toString()));
-      Log.d(TAG, "remoteExtension: " + (remoteExtension == null ? "null" : remoteExtension.toString()));
-
       // 先按普通表情渲染
       MessageUtil.identifyFaceExpression(
           textBinding.getRoot().getContext(),
