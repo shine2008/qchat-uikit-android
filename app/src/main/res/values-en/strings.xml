@@ -5,7 +5,7 @@
   -->
 
 <resources>
-    <string name="app_name">Netease QChat</string>
+    <string name="app_name">Agent QChat</string>
     <string name="yunxin_name">Netease CommsEase</string>
     <string name="yunxin_desc">Stable instant messaging service</string>
 
