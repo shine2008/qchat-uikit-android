@@ -126,6 +126,10 @@
             android:name=".welcome.ServerActivity"
             android:screenOrientation="portrait"
             android:exported="false" />
+        <activity
+            android:name=".main.mine.setting.ConfigInfoActivity"
+            android:screenOrientation="portrait"
+            android:exported="false" />
 
         <!-- 小米推送配置 -->
         <service
